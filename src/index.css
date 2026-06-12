@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+body {
+  font-family: var(--font-dm);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat);
+}
+
+#root,
+body,
+html {
+  height: 100%;
+}
+
+
+
+
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('/fonts/dm sans/DMSans-Thin.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('/fonts/dm sans/DMSans-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/dm sans/DMSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/dm sans/DMSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/dm sans/DMSans-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/dm sans/DMSans-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/dm sans/DMSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/dm sans/DMSans-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/dm sans/DMSans-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('/fonts/montserrat/Montserrat-Thin.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('/fonts/montserrat/Montserrat-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/montserrat/Montserrat-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/montserrat/Montserrat-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/montserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/montserrat/Montserrat-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/montserrat/Montserrat-Black.ttf') format('truetype');
+}
+
+@theme {
+  --font-dm: "DM Sans", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+/* Tailwind my colors */
+@theme {
+  --color-primary: #E43500;
+  --color-buttons: #E84D20;
+  --color-borders: #E4BEB5;
+  --color-border-strength: #FF7348;
+}
