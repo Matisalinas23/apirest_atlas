@@ -1,7 +1,8 @@
-import { Aside } from "../components/dashboard/Aside"
-import { useSelectionStore } from "@/store/useSelectionStore"
 import { useEffect, useState } from "react"
+import { Aside } from "../components/dashboard/Aside"
 import type { IEndpoint } from "@/interfaces/project.interface"
+import { useSelectionStore } from "@/store/useSelectionStore"
+import projects from "@/data/projects"
 
 const methodColors = {
     GET: "bg-green-400",
@@ -14,7 +15,21 @@ const methodColors = {
 }
 
 const EndpointDashboard = () => {
-    const { selectedEndpoint } = useSelectionStore()
+    const [lastEndpoint, setLastEndpoint] = useState<IEndpoint | null>(null)
+    const {activeEndpoint} = useSelectionStore()
+
+    useEffect(() => {
+        const storageEndpoint = JSON.parse(localStorage.getItem("lastEndpoint"))
+        setLastEndpoint(storageEndpoint)
+    }, [])
+
+    useEffect(() => {
+        if (!activeEndpoint) return
+        
+        localStorage.setItem("lastEndpoint", JSON.stringify(activeEndpoint))
+        setLastEndpoint(activeEndpoint)
+    }, [activeEndpoint])
+
     return (
         <div className="flex-1">
             <header className="w-full py-4 px-6 border-b border-borders flex justify-between">
@@ -26,11 +41,11 @@ const EndpointDashboard = () => {
             </header>
 
             <div className="px-8 py-4">
-                <h3 className="text-xl mb-4">{selectedEndpoint?.name}</h3>
+                <h3 className="text-xl mb-4">{lastEndpoint?.name}</h3>
                 <div className="flex items-center gap-6">
                     <div className="flex items-center gap-2">
-                        <div className={` rounded-full w-3 h-3 ${methodColors[selectedEndpoint?.method ?? "GET"]}`}></div>
-                        <h3 className="text-md font-medium">{selectedEndpoint?.method}</h3>
+                        <div className={` rounded-full w-3 h-3 ${methodColors[lastEndpoint?.method ?? "GET"]}`}></div>
+                        <h3 className="text-md font-medium">{lastEndpoint?.method}</h3>
                     </div>
                     <div className="h-6 w-full border rounded-md"></div>
                 </div>
@@ -40,13 +55,11 @@ const EndpointDashboard = () => {
 }
 
 export default function Dashboard() {
-    const { selectedEndpoint } = useSelectionStore()
-    const [endpointDashboard, setEndpointDashboard] = useState<IEndpoint | null>(selectedEndpoint)
+    const { setProjects } = useSelectionStore()
 
     useEffect(() => {
-        if (!selectedEndpoint) return
-        setEndpointDashboard(selectedEndpoint)
-    }, [selectedEndpoint])
+        setProjects(projects)
+    }, [])
 
     return (
         <div className="flex text-neutral-600">
