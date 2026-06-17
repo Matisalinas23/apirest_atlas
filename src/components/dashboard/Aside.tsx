@@ -19,7 +19,7 @@ export const Aside = () => {
                     <h1 className="font-normal text-2xl text-primary">
                         API REST ATLAS
                     </h1>
-                    <h2 className="text-[12px] font-semibold text-neutral-600">
+                    <h2 className="text-[12px] font-semibold">
                         v{version} - STABLE
                     </h2>
                 </div>
