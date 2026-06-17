@@ -25,19 +25,37 @@ const EndpointDashboard = () => {
 
     useEffect(() => {
         if (!activeEndpoint) return
-        
+
         localStorage.setItem("lastEndpoint", JSON.stringify(activeEndpoint))
         setLastEndpoint(activeEndpoint)
     }, [activeEndpoint])
 
+    if (!lastEndpoint) {
+        return (
+            <div className="flex-1">
+                <header className="w-full h-[8%] px-12 border-b border-borders flex items-center justify-end">
+                    <div className="h-12 w-12 rounded-full border-2 border-border-strength"></div>
+                </header>
+
+                <div className="w-full h-[92%] flex flex-col justify-center items-center gap-8">
+                    <p className="text-2xl font-medium">
+                        No hay ningun endpoint seleccionado
+                    </p>
+
+                    <div className="text-lg flex items-center gap-2">
+                        <p>Buscar endpoint: </p>
+                        <div className="w-80 h-8 border border-borders rounded-xl bg-neutral-100"></div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="flex-1">
-            <header className="w-full py-4 px-6 border-b border-borders flex justify-between">
-                <div className="w-120 h-12 border border-borders rounded-xl bg-neutral-100">
-                </div>
-
-                <div className="h-12 w-12 rounded-full border-2 border-border-strength">
-                </div>
+            <header className="w-full h-[8%] px-12 border-b border-borders flex items-center justify-between">
+                <div className="w-120 h-10 border border-borders rounded-xl bg-neutral-100"></div>
+                <div className="h-12 w-12 rounded-full border-2 border-border-strength"></div>
             </header>
 
             <div className="px-8 py-4">
