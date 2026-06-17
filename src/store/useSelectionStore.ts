@@ -5,31 +5,34 @@ interface SelectionState {
   selectedProject: IProject | null
   selectedModule: IModule | null
   selectedEndpoint: IEndpoint | null
-  setSelectedProject: (project: IProject | null) => void
-  setSelectedModule: (module: IModule | null) => void
-  setSelectedEndpoint: (endpoint: IEndpoint | null) => void
-  clearSelection: () => void
+  toggleProject: (project: IProject) => void
+  toggleModule: (module: IModule) => void
+  toggleEndpoint: (endpoint: IEndpoint) => void
 }
 
-export const useSelectionStore = create<SelectionState>((set) => ({
+export const useSelectionStore = create<SelectionState>((set, get) => ({
   selectedProject: null,
   selectedModule: null,
   selectedEndpoint: null,
-  setSelectedProject: (project) => set({
-    selectedProject: project,
-    selectedModule: null,
-    selectedEndpoint: null
-  }),
-  setSelectedModule: (module) => set({
-    selectedModule: module,
-    selectedEndpoint: null
-  }),
-  setSelectedEndpoint: (endpoint) => set({
-    selectedEndpoint: endpoint
-  }),
-  clearSelection: () => set({
-    selectedProject: null,
-    selectedModule: null,
-    selectedEndpoint: null
-  })
+  toggleProject: (project) => {
+    const currentProject = get().selectedProject;
+    set({
+      selectedProject: currentProject?.id === project.id ? null : project,
+      selectedModule: null,
+      selectedEndpoint: null
+    });
+  },
+  toggleModule: (module) => {
+    const currentModule = get().selectedModule;
+    set({
+      selectedModule: currentModule?.id === module.id ? null : module,
+      selectedEndpoint: null
+    })
+  },
+  toggleEndpoint: (endpoint) => {
+    const currentEndpoint = get().selectedEndpoint;
+    set({
+      selectedEndpoint: currentEndpoint?.id === endpoint.id ? null : endpoint
+    })
+  },
 }))
