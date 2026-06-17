@@ -1,4 +1,6 @@
-const projects = [
+import type { IProject } from "@/interfaces/project.interface"
+
+const projects: IProject[] = [
     {
         name: "Proyecto 1",
         id: 1,

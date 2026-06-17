@@ -2,6 +2,7 @@ interface IProject {
     name: string
     id: number
     modules: IModule[]
+    lastModifyDate: string
 }
 
 interface IModule {
@@ -11,7 +12,7 @@ interface IModule {
     modules?: IModule[]
 }
 
-type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "OPTIONS" | "HEAD" | "TRACE" | "CONNECT"
+type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "OPTIONS" | "HEAD"
 
 interface IEndpoint {
     id: number;
