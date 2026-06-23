@@ -3,6 +3,7 @@ import { RequestConfiguration } from "./RequestConfiguration";
 import { EndpointPath } from "./EndpointPath";
 import { Responses } from "./Responses";
 import { Documentation } from "./Documentation";
+import { Tags } from "./Tags";
 
 const methodColors = {
     GET: "bg-green-400",
@@ -15,7 +16,6 @@ const methodColors = {
 }
 
 export const EndpointDashboard = ({activeEndpoint}: {activeEndpoint: IEndpoint | null}) => {
-
     if (!activeEndpoint) {
         return (
             <div className="flex-1">
@@ -38,7 +38,7 @@ export const EndpointDashboard = ({activeEndpoint}: {activeEndpoint: IEndpoint |
     }
 
     return (
-        <div className="flex-1">
+        <div className="flex-1 max-h-screen overflow-auto">
             <header className="w-full h-[8%] px-12 border-b border-borders flex items-center justify-between">
                 <div className="w-120 h-10 border border-borders rounded-xl bg-neutral-100"></div>
                 <div className="h-12 w-12 rounded-full border-2 border-border-strength"></div>
@@ -72,7 +72,8 @@ export const EndpointDashboard = ({activeEndpoint}: {activeEndpoint: IEndpoint |
                         <Responses response={activeEndpoint.responses}/>
                     </div>
                     <div className="w-1/3 flex flex-col gap-4">
-                        <Documentation />
+                        <Documentation description={activeEndpoint.description}/>
+                        <Tags tags={activeEndpoint.tags} />
                     </div>
                 </div>
             </div>
