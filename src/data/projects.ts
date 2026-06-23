@@ -14,109 +14,29 @@ const projects: IProject[] = [
                         id: 1,
                         name: "get_users",
                         url: "/users",
-                        method: "GET"
+                        method: "GET",
+                        description: "return all users",
+                        queryParameters: [],
+                        pathParameters: [],
+                        headers: [],
+                        requestBody: "",
+                        responses: {
+                            status: 200,
+                            body: "{\n    'id': 1\n    'name': 'Matias'\n    'email': 'matisalnico@gmail.com'\n    'addresses': [\n        {\n            'id': 1\n            'address': 'Avenida Siempreviva 123'\n        },\n        {\n            'id': 2,\n            'address': 'Avenida Siempreviva 124'\n        },\n        {\n            'id': 3,\n            'address': 'Avenida Siempreviva 125'\n        }\n    ]\n}",
+                            description: "OK"
+                        },
+                        note: "",
+                        tags: [
+                            "get",
+                            "users",
+                            "all",
+                            "list",
+                        ]
                     },
-                    {
-                        id: 2,
-                        name: "get_user",
-                        url: "/users/:id",
-                        method: "GET"
-                    },
-                    {
-                        id: 3,
-                        name: "create_user",
-                        url: "/users",
-                        method: "POST"
-                    },
-                    {
-                        id: 4,
-                        name: "update_user",
-                        url: "/users/:id",
-                        method: "PUT"
-                    },
-                    {
-                        id: 5,
-                        name: "delete_user",
-                        url: "/users/:id",
-                        method: "DELETE"
-                    }
                 ]
             },
-            {
-                id: 2,
-                name: "auth",
-                endpoints: [
-                    {
-                        id: 2,
-                        name: "login",
-                        url: "/auth/login",
-                        method: "POST"
-                    },
-                    {
-                        id: 3,
-                        name: "register",
-                        url: "/auth/register",
-                        method: "POST",
-                    }
-                ]
-            }
         ]
     },
-    {
-        name: "Proyecto 2",
-        id: 2,
-        lastModifyDate: "05/06/2026",
-        modules: [
-            {
-                id: 3,
-                name: "auth",
-                endpoints: [
-                    {
-                        id: 4,
-                        name: "login",
-                        url: "/auth/login",
-                        method: "POST"
-                    }
-                ]
-            },
-            {
-                id: 4,
-                name: "products",
-                endpoints: [
-                    {
-                        id: 5,
-                        name: "get_products",
-                        url: "/products",
-                        method: "GET"
-                    },
-                    {
-                        id: 6,
-                        name: "get_product",
-                        url: "/products/:id",
-                        method: "GET"
-                    },
-                    {
-                        id: 7,
-                        name: "create_product",
-                        url: "/products",
-                        method: "POST"
-                    },
-                    {
-                        id: 8,
-                        name: "update_product",
-                        url: "/products/:id",
-                        method: "PUT"
-                    },
-                    {
-                        id: 9,
-                        name: "delete_product",
-                        url: "/products/:id",
-                        method: "DELETE"
-                    }
-                ]
-            }
-        ]
-    }
 ]
 
 export default projects
