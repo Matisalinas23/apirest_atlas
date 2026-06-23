@@ -71,10 +71,10 @@ const HeadersTab = () => {
     )
 }
 
-const BodyTab = () => {
+const BodyTab = ({requestBody}: {requestBody: string}) => {
     return (
         <div className="text-sm text-neutral-600">
-            <p>Body de la petición</p>
+            <p className="whitespace-pre-wrap">{requestBody}</p>
         </div>
     )
 }
@@ -109,7 +109,7 @@ export const RequestConfiguration = ({activeEndpoint}: {activeEndpoint: IEndpoin
                 <div className="p-4">
                     {activeTab === "Params" && <ParamsTab pathParams={activeEndpoint.pathParameters} queryParams={activeEndpoint.queryParameters} />}
                     {activeTab === "Headers" && <HeadersTab />}
-                    {activeTab === "Body" && <BodyTab />}
+                    {activeTab === "Body" && <BodyTab requestBody={activeEndpoint.requestBody || '{}'} />}
                 </div>
             </div>
         </div>
