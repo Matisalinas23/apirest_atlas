@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 body {
-  font-family: var(--font-dm);
+  font-family: var(--font-dmsans);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-montserrat);
+}
+
+p {
+  font-family: var(--font-jetbrainsmono);
 }
 
 #root,
@@ -19,67 +23,124 @@ html {
 
 
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DmSans";
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url('/fonts/dm sans/DMSans-Thin.ttf') format('truetype');
+  src: url("/fonts/dm sans/DMSans-Thin.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DmSans";
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url('/fonts/dm sans/DMSans-ExtraLight.ttf') format('truetype');
+  src: url("/fonts/dm sans/DMSans-ExtraLight.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DmSans";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('/fonts/dm sans/DMSans-Light.ttf') format('truetype');
+  src: url("/fonts/dm sans/DMSans-Light.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DmSans";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/dm sans/DMSans-Regular.ttf') format('truetype');
+  src: url("/fonts/dm sans/DMSans-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DmSans";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/fonts/dm sans/DMSans-Medium.ttf') format('truetype');
+  src: url("/fonts/dm sans/DMSans-Medium.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DmSans";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/fonts/dm sans/DMSans-SemiBold.ttf') format('truetype');
+  src: url("/fonts/dm sans/DMSans-SemiBold.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DmSans";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/dm sans/DMSans-Bold.ttf') format('truetype');
+  src: url("/fonts/dm sans/DMSans-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DmSans";
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('/fonts/dm sans/DMSans-ExtraBold.ttf') format('truetype');
+  src: url("/fonts/dm sans/DMSans-ExtraBold.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DmSans";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url('/fonts/dm sans/DMSans-Black.ttf') format('truetype');
+  src: url("/fonts/dm sans/DMSans-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("/fonts/jetbrains mono/JetBrainsMono-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("/fonts/jetbrains mono/JetBrainsMono-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/jetbrains mono/JetBrainsMono-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/jetbrains mono/JetBrainsMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/jetbrains mono/JetBrainsMono-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/jetbrains mono/JetBrainsMono-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/jetbrains mono/JetBrainsMono-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/jetbrains mono/JetBrainsMono-ExtraBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -147,8 +208,9 @@ html {
 }
 
 @theme {
-  --font-dm: "DM Sans", sans-serif;
+  --font-jetbrainsmono: "JetBrainsMono", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
+  --font-dmsans: "DmSans", sans-serif;
 }
 
 /* Tailwind my colors */
