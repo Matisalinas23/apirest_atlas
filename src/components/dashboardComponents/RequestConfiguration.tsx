@@ -79,7 +79,7 @@ const BodyTab = () => {
     )
 }
 
-export const RequestConfiguration = ({endpoint}: {endpoint: IEndpoint}) => {
+export const RequestConfiguration = ({activeEndpoint}: {activeEndpoint: IEndpoint}) => {
     const [activeTab, setActiveTab] = useState<TabType>("Params");
     const tabs: TabType[] = ["Params", "Headers", "Body"];
 
@@ -107,7 +107,7 @@ export const RequestConfiguration = ({endpoint}: {endpoint: IEndpoint}) => {
                 </div>
                 {/* Tab Content */}
                 <div className="p-4">
-                    {activeTab === "Params" && <ParamsTab pathParams={endpoint.pathParameters} queryParams={endpoint.queryParameters} />}
+                    {activeTab === "Params" && <ParamsTab pathParams={activeEndpoint.pathParameters} queryParams={activeEndpoint.queryParameters} />}
                     {activeTab === "Headers" && <HeadersTab />}
                     {activeTab === "Body" && <BodyTab />}
                 </div>
